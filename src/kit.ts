@@ -1102,6 +1102,9 @@ export async function descriptionForKit(kit: Kit, shortVsName: boolean = false):
         return kit.description;
     }
     if (kit.toolchainFile) {
+        if (kit.description) {
+            return kit.description;
+        }
         return localize('kit.for.toolchain.file', 'Kit for toolchain file {0}', kit.toolchainFile);
     }
     if (kit.visualStudio) {
